@@ -18,7 +18,7 @@ def note_list(request):
             note = serializer.save()
             collection = ChromaDB.get_or_create_collection()
             collection.add(documents=[note.content], metadatas=[
-                {"title": note.title, "category": note.category}], ids=[str(note.id)])
+                {"title": note.title, "category": str(note.category)}], ids=[str(note.id)])
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 

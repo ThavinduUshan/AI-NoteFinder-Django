@@ -9,8 +9,6 @@ class CategorySerializer(serializers.ModelSerializer):
 
 
 class NoteSerializer(serializers.ModelSerializer):
-    category = CategorySerializer()
-
     class Meta:
         model = Note
         fields = '__all__'
