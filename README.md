@@ -8,8 +8,38 @@ NoteFinder is a Django-based application designed to assist users in efficiently
 
 - **Note Management**: Users can create, edit, and organize their notes within the application.
 - **AI-Powered Search**: NoteFinder employs the RAG approach to intelligently retrieve relevant notes based on user queries.
-- **User Account Management**: Enables users to create their own accounts for personalized note management.
 - **Vector Database Integration**: ChromaDB is utilized as the vector database to efficiently store and retrieve note vectors.
+
+## Endpoints
+
+### Notes
+
+- **GET /notes/**
+  - Retrieves a list of all notes along with their categories.
+  
+- **POST /notes/**
+  - Creates a new note.
+  - Request body should contain JSON data with note details.
+  - Upon successful creation, the note is added to the database and indexed for search.
+
+### Search
+
+- **GET /notes/search/**
+  - Searches for notes based on a provided query.
+  - Query parameter:
+    - `query`: The search query to find relevant notes.
+  - Returns up to 6 most relevant notes based on the query.
+
+### Categories
+
+- **GET /notes/categories/**
+  - Retrieves a list of all available categories.
+  
+- **POST /notes/categories/**
+  - Creates a new category.
+  - Request body should contain JSON data with category details.
+  - Upon successful creation, the new category is added to the database.
+
 
 ## Technologies Used
 
