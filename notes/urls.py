@@ -1,7 +1,8 @@
 from django.urls import path
-from .views import notes, search
+from .views import note_list, search_notes, category_list
 
 urlpatterns = [
-    path('', notes, name='note_list'),
-    path('search/', search, name='search_notes'),
+    path('', note_list, name='note_list'),
+    path('search/', search_notes, name='search_notes'),
+    path('categories/', category_list, name='category-list'),
 ]
