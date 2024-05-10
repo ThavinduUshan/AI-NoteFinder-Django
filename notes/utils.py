@@ -16,4 +16,4 @@ class ChromaDB:
 
     @staticmethod
     def get_collection():
-        return ChromaDB.__client.get_collection(name=os.getenv("CHROMADB_NAME"), embedding_function=ChromaDB.__openai_ef)
+        return ChromaDB.__client.get_collection(name=os.getenv("CHROMADB_NAME"))
